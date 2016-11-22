@@ -1,0 +1,3 @@
+class Interchange < ApplicationRecord
+	
+end

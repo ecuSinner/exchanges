@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  model: MyString
+  condition: MyString
+  price: 9.99
+  location: MyString
+  description: MyText
+  change_in: MyText
+
+two:
+  title: MyString
+  model: MyString
+  condition: MyString
+  price: 9.99
+  location: MyString
+  description: MyText
+  change_in: MyText
