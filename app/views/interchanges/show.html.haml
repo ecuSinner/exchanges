@@ -1,12 +1,39 @@
-%h2= @interchange.title
-%h3= @interchange.model
-%p= @interchange.condition
-%p= @interchange.price
-%p= @interchange.location
-%p= @interchange.description
-%p= @interchange.change_in
+.main_content
+	#item_top.row
+		.col-md-4
+			= image_tag @interchange.image.url, class: "item_image"
+		.col-md-2
+			= image_tag @interchange.image.url, class: "item_images"
+			= image_tag @interchange.image.url, class: "item_images"
+		.col-md-2
+			= image_tag @interchange.image.url, class: "item_images"
+			= image_tag @interchange.image.url, class: "item_images"
+		.col-md-4
+			#item_info
+				%h2= @interchange.title
+				%h3= @interchange.model
+				%p
+					Condition
+					= @interchange.condition
+				%p
+					Price
+					= @interchange.price
+				%p
+					Location
+					= @interchange.location
+				%p
+					Description
+					= @interchange.description
+				%p
+					Change in
+					= @interchange.change_in
+				%p
+					Submitted by
+					= @interchange.user.email
 
-
-= link_to "Back", root_path, class: "btn btn-default"
-
+	.col-md-12
+		= link_to "Back", root_path, class: "btn btn-default"
+		- if user_signed_in?
+			= link_to "Edit", edit_interchange_path, class: "btn btn-default"
+			= link_to "Delete", interchange_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"
 

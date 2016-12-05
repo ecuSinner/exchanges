@@ -1,12 +1,13 @@
 class InterchangesController < ApplicationController
 	before_action :find_iterchange, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-		@interchange = Interchange.all.order("created_at DESC")
+		@interchanges = Interchange.all.order("created_at DESC")
 	end
 
 	def new
-		@interchange = Interchange.new
+		@interchange = current_user.interchanges.build
 
 	end
 
@@ -14,7 +15,7 @@ class InterchangesController < ApplicationController
 	end
 
 	def create
-		@interchange = Interchange.new(interchange_params)
+		@interchange = current_user.interchanges.build(interchange_params)
 
 		if @interchange.save
 			redirect_to @interchange, notice: "Thank you"
@@ -28,15 +29,22 @@ class InterchangesController < ApplicationController
 	end
 
 	def update
+		if @interchange.update(interchange_params)
+			redirect_to @interchange
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@interchange.destroy
+		redirect_to root_path, notice: "Successfully delete interchange"
 	end
 
 	private
 
 	def interchange_params
-		params.require(:interchange).permit(:title, :model, :condition, :price, :location, :description, :change_in)
+		params.require(:interchange).permit(:title, :model, :condition, :price, :location, :description, :change_in, :image)
 	end
 
 

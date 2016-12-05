@@ -1,4 +1,6 @@
-- @interchange.each do |interchange|
-	%h2=link_to interchange.title, interchange
-	%h3= interchange.model
-	%p=	interchange.price
+#interchanges.transitions-enabled
+	- @interchanges.each do |interchange|
+		.box.panel.panel-default
+			= link_to (image_tag interchange.image.url), interchange
+				
+			

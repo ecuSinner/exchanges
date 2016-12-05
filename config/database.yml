@@ -23,7 +23,7 @@ default: &default
 
   database: exchanges_items_development
   username: postgres
-  password: 123456
+  password: <%= ENV['EXCHANGES_ITEMS_DATABASE_PASSWORD'] %>
   host: localhost
 
 

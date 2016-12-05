@@ -1,0 +1,12 @@
+I"ß(function() {
+  $(function() {
+    return $('interchanges').imagesLoaded(function() {
+      return $('#interchanges').masonry({
+        itemSelector: '.box',
+        isFitWidth: true
+      });
+    });
+  });
+
+}).call(this);
+:ET
