@@ -20783,3 +20783,11 @@ Processing by InterchangesController#index as HTML
 Completed 200 OK in 2347ms (Views: 2332.4ms | ActiveRecord: 1.6ms)
 
 
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mInterchange Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "interchanges" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "interchanges"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interchanges"[0m
+  [1m[36mInterchange Load (0.3ms)[0m  [1m[34mSELECT  "interchanges".* FROM "interchanges" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
